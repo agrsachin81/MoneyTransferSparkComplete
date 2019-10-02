@@ -12,8 +12,10 @@ public enum AccountStatus implements ValuedEnum<AccountStatus>{
 	DELETED,
 	UNKNOWN;
 	
+	private static final ValuedEnumDeserializer<AccountStatus> VALUED_ENUM_DESERIALIZER = new ValuedEnumDeserializer<>(AccountStatus.values());
+
 	public static ValuedEnumDeserializer<AccountStatus> getTypeDeserializer(){
-		return new ValuedEnumDeserializer<>(AccountStatus.values());
+		return VALUED_ENUM_DESERIALIZER;
 	}
 
 	@Override
